@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: azm-nodejs-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: azm-nodejs
+  template:
+    metadata:
+      labels:
+        app: azm-nodejs
+    spec:
+      containers:
+      - name: azm-nodejs
+        image: azeemmd03/nodejssample:buildNum
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 9090
+
+
+
+
